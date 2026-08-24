@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NovaShop · Zapatos originales con envío a toda Colombia</title>
-<meta name="description" content="Tienda online de calzado original: running, urbano, formal, botas y niños. Envío a toda Colombia, cambio de talla gratis y atención por WhatsApp.">
-<meta name="theme-color" content="#0a0a0a">
-<meta property="og:title" content="NovaShop · Calzado original">
+<title>Zancada · Zapatos originales con envío a toda Colombia</title>
+<meta name="description" content="Tienda online de calzado original: running, urbano, formal, botas y niños. Envío a toda Colombia, producto original y atención directa por WhatsApp.">
+<meta name="theme-color" content="#111110">
+<meta property="og:title" content="Zancada · Calzado original">
 <meta property="og:description" content="Zapatos originales con envío a toda Colombia y atención por WhatsApp.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Arial' font-weight='bold'>N</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%23111110'/><path d='M10 10h12M22 10 10 22M10 22h12' stroke='%23faf8f4' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 <div class="topbar">
   <div class="wrap">
     <span>Envío gratis desde <span data-free-from></span></span>
-    <span class="topbar__extra">Cambio de talla gratis · <a data-wa="Hola NovaShop, quiero hacer una consulta.">Escribinos por WhatsApp</a></span>
+    <span class="topbar__extra"><span class="topbar__dot"></span> Producto original garantizado · <a data-wa="Hola Zancada, quiero hacer una consulta.">Escribinos por WhatsApp</a></span>
   </div>
 </div>
 
@@ -29,7 +29,10 @@
     <button class="icon-btn burger" data-open-menu aria-label="Abrir menú">
       <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
-    <a class="logo" href="index.html">NovaShop <em>Store</em></a>
+    <a class="logo" href="index.html">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h11"/><path d="M17.5 5 6.5 19"/><path d="M6.5 19h11"/></svg></span>
+      <span class="logo__type"><span class="logo__name">Zancada</span><span class="logo__tag">Calzado</span></span>
+    </a>
     <nav class="nav" aria-label="Principal">
       <a href="index.html" aria-current="page">Inicio</a>
       <a href="catalogo.html">Catálogo</a>
@@ -58,8 +61,8 @@
     <div class="hero__grid">
       <div class="hero__copy">
         <span class="eyebrow">Nueva temporada 2026</span>
-        <h1 class="h-xl">Tu próximo par te está esperando</h1>
-        <p class="lead">Calzado original para correr, entrenar, trabajar y salir. Seleccionamos cada modelo por comodidad real, no por moda pasajera.</p>
+        <h1 class="h-xl">Cada paso<span class="serif">cuenta una historia</span></h1>
+        <p class="lead">Calzado original para correr, entrenar, trabajar y salir. Elegimos cada modelo por comodidad real, no por moda pasajera.</p>
         <div class="hero__cta">
           <a class="btn btn--solid btn--lg" href="catalogo.html">Ver catálogo</a>
           <a class="btn btn--ghost btn--lg" href="catalogo.html?oferta=1">Ofertas de la semana</a>
@@ -70,20 +73,23 @@
           <div><b>48 h</b><span>Despacho promedio</span></div>
         </div>
       </div>
-      <div class="ph ph--hero" data-label="Imagen principal — modelo destacado"></div>
+      <div class="hero__media">
+        <div class="ph ph--hero" data-label="Imagen principal — modelo destacado"></div>
+        <span class="hero__tagpill">Stock disponible hoy</span>
+      </div>
     </div>
   </section>
 
   <!-- ===== Marquee ===== -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>100% Original</span><span>Envío a toda Colombia</span><span>Cambio de talla gratis</span><span>Pago contra entrega</span>
-      <span>100% Original</span><span>Envío a toda Colombia</span><span>Cambio de talla gratis</span><span>Pago contra entrega</span>
+      <span>100% Original</span><span>Envío a toda Colombia</span><span>Producto original</span><span>Pago contra entrega</span>
+      <span>100% Original</span><span>Envío a toda Colombia</span><span>Producto original</span><span>Pago contra entrega</span>
     </div>
   </div>
 
   <!-- ===== Categorías ===== -->
-  <section class="section">
+  <section class="section reveal">
     <div class="wrap">
       <div class="section__head">
         <div>
@@ -102,7 +108,7 @@
   </section>
 
   <!-- ===== Destacados ===== -->
-  <section class="section section--alt">
+  <section class="section section--alt reveal">
     <div class="wrap">
       <div class="section__head">
         <div>
@@ -117,7 +123,7 @@
   </section>
 
   <!-- ===== Beneficios ===== -->
-  <section class="section">
+  <section class="section reveal">
     <div class="wrap">
       <ul class="usps">
         <li class="usp">
@@ -127,8 +133,8 @@
         </li>
         <li class="usp">
           <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 16"/><path d="M4 20v-4h4"/></svg>
-          <h3>Cambio de talla gratis</h3>
-          <p>Si no te queda, lo cambiamos dentro de los 30 días sin costo de envío adicional.</p>
+          <h3>Cambios en 30 días</h3>
+          <p>Si no te queda, coordinamos el cambio de talla dentro de los 30 días de recibido.</p>
         </li>
         <li class="usp">
           <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -145,7 +151,7 @@
   </section>
 
   <!-- ===== Banner ofertas ===== -->
-  <section class="section section--alt">
+  <section class="section section--alt reveal">
     <div class="wrap">
       <div class="section__head">
         <div>
@@ -159,7 +165,7 @@
   </section>
 
   <!-- ===== Testimonios ===== -->
-  <section class="section">
+  <section class="section reveal">
     <div class="wrap">
       <div class="section__head">
         <div>
@@ -188,11 +194,11 @@
   </section>
 
   <!-- ===== Newsletter ===== -->
-  <section class="section">
+  <section class="section reveal">
     <div class="wrap">
       <div class="newsletter">
         <div>
-          <span class="eyebrow" style="color:rgba(255,255,255,.6)">Comunidad NovaShop</span>
+          <span class="eyebrow" style="color:rgba(255,255,255,.6)">Comunidad Zancada</span>
           <h2 class="h-lg" style="margin-top:8px">10% off en tu primera compra</h2>
           <p style="margin-top:10px;opacity:.8">Dejanos tu correo y te avisamos de lanzamientos, restock de tallas y descuentos antes que a nadie.</p>
         </div>
@@ -211,10 +217,13 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="logo" href="index.html">NovaShop <em>Store</em></a>
+        <a class="logo" href="index.html">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h11"/><path d="M17.5 5 6.5 19"/><path d="M6.5 19h11"/></svg></span>
+      <span class="logo__type"><span class="logo__name">Zancada</span><span class="logo__tag">Calzado</span></span>
+    </a>
         <p style="margin-top:14px;color:var(--ink-soft);max-width:38ch">Tienda online de calzado original. Atendemos por WhatsApp y correo todos los días hábiles.</p>
         <ul style="margin-top:16px">
-          <li>WhatsApp: <a data-wa="Hola NovaShop, quiero información."><span data-store-phone></span></a></li>
+          <li>WhatsApp: <a data-wa="Hola Zancada, quiero información."><span data-store-phone></span></a></li>
           <li>Correo: <a data-mail><span data-store-email></span></a></li>
           <li><span data-store-hours></span></li>
           <li><span data-store-city></span></li>
@@ -222,7 +231,7 @@
         <div class="social" style="margin-top:16px">
           <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
           <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4V9a1 1 0 0 1 1-1z"/></svg></a>
-          <a data-wa="Hola NovaShop!" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/><path d="M9 9c0 3 3 6 6 6"/></svg></a>
+          <a data-wa="Hola Zancada!" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/><path d="M9 9c0 3 3 6 6 6"/></svg></a>
         </div>
       </div>
       <div>
@@ -257,7 +266,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© <span data-year></span> NovaShop. Todos los derechos reservados.</span>
+      <span>© <span data-year></span> Zancada. Todos los derechos reservados.</span>
       <span>Sitio demostrativo · Precios en pesos colombianos (COP)</span>
     </div>
   </div>
@@ -268,7 +277,10 @@
   <div class="drawer-nav__scrim"></div>
   <div class="drawer-nav__panel" role="dialog" aria-label="Menú">
     <div class="drawer-nav__head">
-      <span class="logo">NovaShop</span>
+      <span class="logo">
+      <span class="logo__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h11"/><path d="M17.5 5 6.5 19"/><path d="M6.5 19h11"/></svg></span>
+      <span class="logo__type"><span class="logo__name">Zancada</span><span class="logo__tag">Calzado</span></span>
+    </span>
       <button class="icon-btn" data-close-menu aria-label="Cerrar menú"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </div>
     <a href="index.html">Inicio</a>
@@ -279,7 +291,7 @@
     <a href="catalogo.html?oferta=1">Ofertas</a>
     <a href="carrito.html">Carrito</a>
     <a href="contacto.html">Contacto</a>
-    <a class="btn btn--wa" style="margin-top:18px" data-wa="Hola NovaShop, quiero información sobre sus zapatos.">Escribir por WhatsApp</a>
+    <a class="btn btn--wa" style="margin-top:18px" data-wa="Hola Zancada, quiero información sobre sus zapatos.">Escribir por WhatsApp</a>
   </div>
 </div>
 
@@ -304,7 +316,7 @@
   </aside>
 </div>
 
-<a class="wa-float" data-wa="Hola NovaShop, quiero información sobre sus zapatos." aria-label="Escribir por WhatsApp">
+<a class="wa-float" data-wa="Hola Zancada, quiero información sobre sus zapatos." aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .5-.1.7.5l1 2.4c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1.2 1.4 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2.2 1c.3.2.4.2.5.4.1.1.1.6-.1 1.3z"/></svg>
   <b>WhatsApp</b>
 </a>

@@ -475,7 +475,7 @@ function initPDP() {
 
       <ul class="trust">
         <li>${ICON.truck}<span>Envío a toda Colombia en 2 a 5 días hábiles.</span></li>
-        <li>${ICON.refresh}<span>Cambio de talla gratis dentro de los 30 días.</span></li>
+        <li>${ICON.refresh}<span>Cambio de talla dentro de los 30 días.</span></li>
         <li>${ICON.shield}<span>100% original con garantía de 6 meses.</span></li>
         <li>${ICON.card}<span>Pago contra entrega, transferencia o tarjeta.</span></li>
       </ul>
@@ -731,8 +731,34 @@ function initGlobal() {
   renderCartDrawer();
 }
 
+/* ---------- Movimiento: revelado al hacer scroll y header ---------- */
+function initMotion() {
+  const header = $(".header");
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-stuck", window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const targets = $$(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    targets.forEach(el => el.classList.add("is-in"));
+    return;
+  }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("is-in");
+      obs.unobserve(en.target);
+    });
+  }, { rootMargin: "0px 0px -12% 0px", threshold: 0.06 });
+  targets.forEach(el => io.observe(el));
+}
+
 /* ---------- Arranque ---------- */
 document.addEventListener("DOMContentLoaded", () => {
+  initMotion();
   hydrateContact();
   initGlobal();
   initHome();

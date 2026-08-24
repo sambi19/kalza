@@ -1,11 +1,11 @@
 /* ==========================================================================
-   NovaShop — Datos de la tienda
+   Zancada — Datos de la tienda
    Editá este archivo para cambiar productos, precios y datos de contacto.
    ========================================================================== */
 
 const STORE = {
-  name: "NovaShop",
-  tagline: "Calzado original",
+  name: "Zancada",
+  tagline: "Calzado con carácter",
   phone: "+57 320 460 0630",
   phoneRaw: "573204600630",          // formato para enlaces de WhatsApp
   email: "Novashop.storeDrop@gmail.com",
@@ -37,9 +37,9 @@ const TYPES = [
 
 const PRODUCTS = [
   {
-    id: "nv-001",
+    id: "zc-001",
     name: "Aero Runner Pro",
-    brand: "Nova Athletics",
+    brand: "Zancada Sport",
     category: "unisex",
     type: "running",
     price: 329900,
@@ -57,7 +57,7 @@ const PRODUCTS = [
     sold: [36],
     desc: "Zapatilla de running con entresuela de espuma reactiva y placa estabilizadora. Pensada para entrenamientos diarios de 5 a 21 km sobre asfalto.",
     specs: [
-      ["Amortiguación", "Espuma NovaFoam de retorno alto"],
+      ["Amortiguación", "Espuma ZancadaFoam de retorno alto"],
       ["Drop", "8 mm"],
       ["Peso", "248 g (talla 42)"],
       ["Suela", "Caucho de carbono en zonas de desgaste"]
@@ -65,9 +65,9 @@ const PRODUCTS = [
     care: "Limpiar con paño húmedo y jabón neutro. No usar lavadora ni secadora."
   },
   {
-    id: "nv-002",
+    id: "zc-002",
     name: "Court Classic 74",
-    brand: "Nova Heritage",
+    brand: "Zancada Heritage",
     category: "unisex",
     type: "urbano",
     price: 259900,
@@ -93,9 +93,9 @@ const PRODUCTS = [
     care: "Cepillar en seco y aplicar crema incolora cada 2 meses."
   },
   {
-    id: "nv-003",
+    id: "zc-003",
     name: "Urban Glide Knit",
-    brand: "Nova Athletics",
+    brand: "Zancada Sport",
     category: "mujer",
     type: "urbano",
     price: 219900,
@@ -121,9 +121,9 @@ const PRODUCTS = [
     care: "Lavar a mano con agua fría. Secar a la sombra."
   },
   {
-    id: "nv-004",
+    id: "zc-004",
     name: "Trail Storm GTX",
-    brand: "Nova Outdoor",
+    brand: "Zancada Outdoor",
     category: "hombre",
     type: "botas",
     price: 489900,
@@ -148,9 +148,9 @@ const PRODUCTS = [
     care: "Retirar barro con agua tibia. Reimpermeabilizar cada temporada."
   },
   {
-    id: "nv-005",
+    id: "zc-005",
     name: "Executive Oxford",
-    brand: "Nova Formal",
+    brand: "Zancada Formal",
     category: "hombre",
     type: "formal",
     price: 379900,
@@ -175,9 +175,9 @@ const PRODUCTS = [
     care: "Usar hormas de madera y betún del mismo tono."
   },
   {
-    id: "nv-006",
+    id: "zc-006",
     name: "Studio Trainer W",
-    brand: "Nova Athletics",
+    brand: "Zancada Sport",
     category: "mujer",
     type: "deportivo",
     price: 289900,
@@ -203,9 +203,9 @@ const PRODUCTS = [
     care: "Airear después de cada uso. Lavar solo la plantilla."
   },
   {
-    id: "nv-007",
+    id: "zc-007",
     name: "Mini Spark Kids",
-    brand: "Nova Kids",
+    brand: "Zancada Kids",
     category: "ninos",
     type: "deportivo",
     price: 149900,
@@ -231,9 +231,9 @@ const PRODUCTS = [
     care: "Lavar a mano con agua fría y secar al aire."
   },
   {
-    id: "nv-008",
+    id: "zc-008",
     name: "Coast Slide",
-    brand: "Nova Summer",
+    brand: "Zancada Summer",
     category: "unisex",
     type: "sandalias",
     price: 99900,
@@ -258,9 +258,9 @@ const PRODUCTS = [
     care: "Enjuagar con agua dulce después de la playa o piscina."
   },
   {
-    id: "nv-009",
+    id: "zc-009",
     name: "Velocity Carbon",
-    brand: "Nova Athletics",
+    brand: "Zancada Sport",
     category: "unisex",
     type: "running",
     price: 599900,
@@ -285,9 +285,9 @@ const PRODUCTS = [
     care: "Rotar con otro par de entrenamiento para alargar la vida útil."
   },
   {
-    id: "nv-010",
+    id: "zc-010",
     name: "Retro Wave 90",
-    brand: "Nova Heritage",
+    brand: "Zancada Heritage",
     category: "hombre",
     type: "urbano",
     price: 309900,
@@ -313,9 +313,9 @@ const PRODUCTS = [
     care: "Usar cepillo de gamuza en seco. Evitar mojar."
   },
   {
-    id: "nv-011",
+    id: "zc-011",
     name: "Ballet Soft Leather",
-    brand: "Nova Formal",
+    brand: "Zancada Formal",
     category: "mujer",
     type: "formal",
     price: 199900,
@@ -341,9 +341,9 @@ const PRODUCTS = [
     care: "Hidratar el cuero cada mes con crema incolora."
   },
   {
-    id: "nv-012",
+    id: "zc-012",
     name: "Chelsea Rain Boot",
-    brand: "Nova Outdoor",
+    brand: "Zancada Outdoor",
     category: "mujer",
     type: "botas",
     price: 259900,
@@ -368,9 +368,9 @@ const PRODUCTS = [
     care: "Secar a temperatura ambiente, lejos de fuentes de calor."
   },
   {
-    id: "nv-013",
+    id: "zc-013",
     name: "Skate Deck Low",
-    brand: "Nova Heritage",
+    brand: "Zancada Heritage",
     category: "unisex",
     type: "urbano",
     price: 189900,
@@ -396,9 +396,9 @@ const PRODUCTS = [
     care: "Lavar a mano. No usar blanqueador."
   },
   {
-    id: "nv-014",
+    id: "zc-014",
     name: "Air Step Kids Light",
-    brand: "Nova Kids",
+    brand: "Zancada Kids",
     category: "ninos",
     type: "urbano",
     price: 169900,
@@ -423,9 +423,9 @@ const PRODUCTS = [
     care: "No sumergir en agua por el módulo de luces."
   },
   {
-    id: "nv-015",
+    id: "zc-015",
     name: "Hoop High Top",
-    brand: "Nova Athletics",
+    brand: "Zancada Sport",
     category: "hombre",
     type: "deportivo",
     price: 349900,
@@ -451,9 +451,9 @@ const PRODUCTS = [
     care: "Limpiar la suela antes de cada partido para mantener el agarre."
   },
   {
-    id: "nv-016",
+    id: "zc-016",
     name: "Comfort Walk Daily",
-    brand: "Nova Comfort",
+    brand: "Zancada Comfort",
     category: "mujer",
     type: "deportivo",
     price: 239900,
