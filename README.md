@@ -1,4 +1,4 @@
-# Zancada — Tienda virtual de calzado
+# Kalza — Tienda virtual de calzado
 
 Sitio web completo para una tienda de zapatos online, hecho con HTML, CSS y JavaScript
 puros (sin frameworks ni dependencias). Todos los pedidos y consultas se canalizan por
@@ -104,7 +104,7 @@ usar fotos reales por producto conviene agregar un campo `images: []` a cada pro
 ## Estructura
 
 ```
-zancada/
+kalza/
 ├── index.html
 ├── catalogo.html
 ├── producto.html
@@ -136,13 +136,13 @@ Este repositorio ya está listo para Cloudflare Pages (incluye `_headers` y `_re
 
 1. Entrá a <https://dash.cloudflare.com> → **Workers & Pages** → **Create** → **Pages** →
    **Connect to Git**.
-2. Autorizá GitHub y elegí el repositorio `sambi19/zancada`.
+2. Autorizá GitHub y elegí el repositorio `sambi19/kalza`.
 3. Configuración del build:
    - **Framework preset:** `None`
    - **Build command:** *(dejar vacío)*
    - **Build output directory:** `/`
    - **Root directory:** `/`
-4. **Save and Deploy**. En menos de un minuto queda en `https://zancada.pages.dev`.
+4. **Save and Deploy**. En menos de un minuto queda en `https://kalza.pages.dev`.
 
 Cada `git push` a `main` publica una nueva versión automáticamente.
 

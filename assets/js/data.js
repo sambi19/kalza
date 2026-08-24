@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Zancada — Datos de la tienda
+   Kalza — Datos de la tienda
    Editá este archivo para cambiar productos, precios y datos de contacto.
    ========================================================================== */
 
 const STORE = {
-  name: "Zancada",
+  name: "Kalza",
   tagline: "Calzado con carácter",
   phone: "+57 320 460 0630",
   phoneRaw: "573204600630",          // formato para enlaces de WhatsApp
@@ -39,7 +39,7 @@ const PRODUCTS = [
   {
     id: "zc-001",
     name: "Aero Runner Pro",
-    brand: "Zancada Sport",
+    brand: "Kalza Sport",
     category: "unisex",
     type: "running",
     price: 329900,
@@ -57,7 +57,7 @@ const PRODUCTS = [
     sold: [36],
     desc: "Zapatilla de running con entresuela de espuma reactiva y placa estabilizadora. Pensada para entrenamientos diarios de 5 a 21 km sobre asfalto.",
     specs: [
-      ["Amortiguación", "Espuma ZancadaFoam de retorno alto"],
+      ["Amortiguación", "Espuma KalzaFoam de retorno alto"],
       ["Drop", "8 mm"],
       ["Peso", "248 g (talla 42)"],
       ["Suela", "Caucho de carbono en zonas de desgaste"]
@@ -67,7 +67,7 @@ const PRODUCTS = [
   {
     id: "zc-002",
     name: "Court Classic 74",
-    brand: "Zancada Heritage",
+    brand: "Kalza Heritage",
     category: "unisex",
     type: "urbano",
     price: 259900,
@@ -95,7 +95,7 @@ const PRODUCTS = [
   {
     id: "zc-003",
     name: "Urban Glide Knit",
-    brand: "Zancada Sport",
+    brand: "Kalza Sport",
     category: "mujer",
     type: "urbano",
     price: 219900,
@@ -123,7 +123,7 @@ const PRODUCTS = [
   {
     id: "zc-004",
     name: "Trail Storm GTX",
-    brand: "Zancada Outdoor",
+    brand: "Kalza Outdoor",
     category: "hombre",
     type: "botas",
     price: 489900,
@@ -150,7 +150,7 @@ const PRODUCTS = [
   {
     id: "zc-005",
     name: "Executive Oxford",
-    brand: "Zancada Formal",
+    brand: "Kalza Formal",
     category: "hombre",
     type: "formal",
     price: 379900,
@@ -177,7 +177,7 @@ const PRODUCTS = [
   {
     id: "zc-006",
     name: "Studio Trainer W",
-    brand: "Zancada Sport",
+    brand: "Kalza Sport",
     category: "mujer",
     type: "deportivo",
     price: 289900,
@@ -205,7 +205,7 @@ const PRODUCTS = [
   {
     id: "zc-007",
     name: "Mini Spark Kids",
-    brand: "Zancada Kids",
+    brand: "Kalza Kids",
     category: "ninos",
     type: "deportivo",
     price: 149900,
@@ -233,7 +233,7 @@ const PRODUCTS = [
   {
     id: "zc-008",
     name: "Coast Slide",
-    brand: "Zancada Summer",
+    brand: "Kalza Summer",
     category: "unisex",
     type: "sandalias",
     price: 99900,
@@ -260,7 +260,7 @@ const PRODUCTS = [
   {
     id: "zc-009",
     name: "Velocity Carbon",
-    brand: "Zancada Sport",
+    brand: "Kalza Sport",
     category: "unisex",
     type: "running",
     price: 599900,
@@ -287,7 +287,7 @@ const PRODUCTS = [
   {
     id: "zc-010",
     name: "Retro Wave 90",
-    brand: "Zancada Heritage",
+    brand: "Kalza Heritage",
     category: "hombre",
     type: "urbano",
     price: 309900,
@@ -315,7 +315,7 @@ const PRODUCTS = [
   {
     id: "zc-011",
     name: "Ballet Soft Leather",
-    brand: "Zancada Formal",
+    brand: "Kalza Formal",
     category: "mujer",
     type: "formal",
     price: 199900,
@@ -343,7 +343,7 @@ const PRODUCTS = [
   {
     id: "zc-012",
     name: "Chelsea Rain Boot",
-    brand: "Zancada Outdoor",
+    brand: "Kalza Outdoor",
     category: "mujer",
     type: "botas",
     price: 259900,
@@ -370,7 +370,7 @@ const PRODUCTS = [
   {
     id: "zc-013",
     name: "Skate Deck Low",
-    brand: "Zancada Heritage",
+    brand: "Kalza Heritage",
     category: "unisex",
     type: "urbano",
     price: 189900,
@@ -398,7 +398,7 @@ const PRODUCTS = [
   {
     id: "zc-014",
     name: "Air Step Kids Light",
-    brand: "Zancada Kids",
+    brand: "Kalza Kids",
     category: "ninos",
     type: "urbano",
     price: 169900,
@@ -425,7 +425,7 @@ const PRODUCTS = [
   {
     id: "zc-015",
     name: "Hoop High Top",
-    brand: "Zancada Sport",
+    brand: "Kalza Sport",
     category: "hombre",
     type: "deportivo",
     price: 349900,
@@ -453,7 +453,7 @@ const PRODUCTS = [
   {
     id: "zc-016",
     name: "Comfort Walk Daily",
-    brand: "Zancada Comfort",
+    brand: "Kalza Comfort",
     category: "mujer",
     type: "deportivo",
     price: 239900,
