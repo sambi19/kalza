@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" width="200" height="52">
+  <rect width="200" height="52" fill="rgb(17,17,16)"/>
+  <g transform="translate(0 5) scale(1.75)">
+    <rect width="24" height="24" rx="6.5" fill="rgb(250,248,244)"/>
+    <path fill="rgb(17,17,16)" d="M4.5 3.4L8.6 3.4L8.6 20.6L4.5 20.6Z"/><path fill="rgb(17,17,16)" d="M20 3.4L14.6 3.4L8.6 10.5L8.6 15.5Z"/><path fill="rgb(17,17,16)" d="M11.6 11.3L20.4 20.6L15 20.6L8.6 13.8Z"/>
+  </g>
+  <text x="56" y="34" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="27" font-weight="900" letter-spacing="3" fill="rgb(250,248,244)">KALZA</text>
+</svg>
