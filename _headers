@@ -4,6 +4,14 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
+# El HTML siempre se revalida: así el navegador nunca mezcla una página
+# vieja con hojas de estilo o scripts nuevos.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /assets/*
   Cache-Control: public, max-age=604800, must-revalidate
 

@@ -248,9 +248,12 @@ ul{margin:0; padding:0; list-style:none}
 .section__head p{max-width:50ch;color:var(--ink-soft);margin-top:12px}
 
 /* ---------- Revelado al hacer scroll ---------- */
-.reveal{opacity:0;transform:translateY(22px)}
-.reveal.is-in{opacity:1;transform:none;transition:opacity .7s var(--ease-out), transform .7s var(--ease-out)}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+/* A prueba de fallos: el contenido es visible por defecto. Solo se oculta
+   cuando el JS confirmó que va a animarlo (clase js-motion en <html>). */
+.reveal{opacity:1;transform:none}
+.js-motion .reveal{opacity:0;transform:translateY(22px)}
+.js-motion .reveal.is-in{opacity:1;transform:none;transition:opacity .7s var(--ease-out), transform .7s var(--ease-out)}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1;transform:none}}
 
 /* ---------- Grillas ---------- */
 .grid{display:grid;gap:clamp(14px,1.8vw,26px)}

@@ -740,20 +740,30 @@ function initMotion() {
     onScroll();
   }
 
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const targets = $$(".reveal");
-  if (reduce || !("IntersectionObserver" in window)) {
-    targets.forEach(el => el.classList.add("is-in"));
-    return;
-  }
+  if (!targets.length) return;
+
+  const showAll = () => targets.forEach(el => el.classList.add("is-in"));
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Sin observer o con movimiento reducido: mostrar todo tal cual.
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  // Recién acá ocultamos: si algo falla antes, el contenido ya se veía.
+  document.documentElement.classList.add("js-motion");
+
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(en => {
       if (!en.isIntersecting) return;
       en.target.classList.add("is-in");
       obs.unobserve(en.target);
     });
-  }, { rootMargin: "0px 0px -12% 0px", threshold: 0.06 });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0 });
   targets.forEach(el => io.observe(el));
+
+  // Red de seguridad: pase lo que pase, a los 2 s todo queda visible.
+  setTimeout(showAll, 2000);
+  window.addEventListener("load", () => setTimeout(showAll, 600));
 }
 
 /* ---------- Arranque ---------- */
