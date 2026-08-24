@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ZANCADA — Sistema de diseño
+   KALZA — Sistema de diseño
    Editorial monocromo cálido + un acento de color. Sin dependencias.
    ========================================================================== */
 
@@ -165,16 +165,28 @@ ul{margin:0; padding:0; list-style:none}
 .drawer-nav__scrim{position:absolute;inset:0;background:rgba(17,17,16,.5);opacity:0;transition:opacity .35s;backdrop-filter:blur(2px)}
 .drawer-nav[data-open="true"] .drawer-nav__scrim{opacity:1}
 .drawer-nav__panel{
-  position:absolute;inset:0 20% 0 0;min-width:300px;background:var(--paper);padding:24px;
+  position:absolute;inset:0 28% 0 0;min-width:265px;max-width:330px;background:var(--paper);padding:24px;
   transform:translateX(-100%);transition:transform .42s var(--ease-out);
   display:flex;flex-direction:column;gap:2px;overflow:auto;
 }
 .drawer-nav[data-open="true"] .drawer-nav__panel{transform:none}
 .drawer-nav__panel a{
-  font-size:27px;font-weight:800;text-transform:uppercase;letter-spacing:-.035em;
-  padding:13px 0;border-bottom:1px solid var(--line);transition:padding-left .25s var(--ease-out), color .2s;
+  font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  padding:13px 2px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:padding-left .25s var(--ease-out), color .2s;
 }
-.drawer-nav__panel a:hover{padding-left:10px;color:var(--accent)}
+.drawer-nav__panel a::after{content:"→";font-weight:400;font-size:14px;color:var(--muted);opacity:0;transition:opacity .2s}
+.drawer-nav__panel a:hover{padding-left:8px;color:var(--accent)}
+.drawer-nav__panel a:hover::after{opacity:1;color:var(--accent)}
+/* El botón de WhatsApp del menú no lleva el estilo de los enlaces */
+.drawer-nav__panel a.btn{
+  font-size:13.5px;letter-spacing:-.01em;text-transform:none;border-bottom:0;
+  justify-content:center;width:100%;padding:14px 14px;
+  white-space:normal;   /* si no entra en una línea, baja; nunca se corta */
+}
+.drawer-nav__panel a.btn::after{content:none}
+.drawer-nav__panel a.btn:hover{padding-left:14px;color:#053b16}
 .drawer-nav__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 
 /* ---------- Placeholders de imagen ---------- */
