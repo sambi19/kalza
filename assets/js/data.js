@@ -9,7 +9,7 @@ const STORE = {
   phone: "+57 320 460 0630",
   phoneRaw: "573204600630",          // formato para enlaces de WhatsApp
   email: "Novashop.storeDrop@gmail.com",
-  city: "Bogotá, Colombia",
+  city: "Cali, Colombia",
   hours: "Lun a Sáb · 8:00 a.m. – 8:00 p.m.",
   instagram: "https://instagram.com/",
   facebook: "https://facebook.com/",
