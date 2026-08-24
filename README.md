@@ -129,3 +129,22 @@ y la carpeta `/ (root)`. En un minuto queda publicado.
 
 Los productos, precios y reseñas son de ejemplo y deben reemplazarse por los reales antes
 de publicar la tienda.
+
+## Desplegar en Cloudflare Pages
+
+Este repositorio ya está listo para Cloudflare Pages (incluye `_headers` y `_redirects`).
+
+1. Entrá a <https://dash.cloudflare.com> → **Workers & Pages** → **Create** → **Pages** →
+   **Connect to Git**.
+2. Autorizá GitHub y elegí el repositorio `sambi19/novashop`.
+3. Configuración del build:
+   - **Framework preset:** `None`
+   - **Build command:** *(dejar vacío)*
+   - **Build output directory:** `/`
+   - **Root directory:** `/`
+4. **Save and Deploy**. En menos de un minuto queda en `https://novashop.pages.dev`.
+
+Cada `git push` a `main` publica una nueva versión automáticamente.
+
+Para usar un dominio propio: en el proyecto de Pages entrá a **Custom domains** →
+**Set up a custom domain** y seguí los pasos de DNS.

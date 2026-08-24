@@ -1,0 +1,10 @@
+# Rutas amigables para Cloudflare Pages
+/inicio      /index.html      301
+/tienda      /catalogo.html   301
+/catalog     /catalogo.html   301
+/ofertas     /catalogo.html?oferta=1  301
+/hombre      /catalogo.html?cat=hombre 301
+/mujer       /catalogo.html?cat=mujer  301
+/ninos       /catalogo.html?cat=ninos  301
+/cart        /carrito.html    301
+/contact     /contacto.html   301
