@@ -107,16 +107,29 @@ ul{margin:0; padding:0; list-style:none}
 .btn[disabled]{opacity:.4;pointer-events:none}
 
 /* ---------- Logo ---------- */
-.logo{display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.logo{display:inline-flex;align-items:center;gap:11px;color:var(--ink);line-height:1}
 .logo__mark{
-  width:36px;height:36px;flex:none;border-radius:11px;background:var(--ink);
-  display:grid;place-items:center;transition:transform .35s var(--ease-out), background .25s;
+  width:38px;height:38px;flex:none;border-radius:12px;background:var(--ink);
+  display:grid;place-items:center;position:relative;overflow:hidden;
+  transition:transform .4s var(--ease-out), background .3s;
 }
-.logo:hover .logo__mark{transform:rotate(-8deg) scale(1.05);background:var(--accent)}
-.logo__mark svg{width:21px;height:21px;fill:none;stroke:var(--paper);stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-.logo__type{display:flex;flex-direction:column;line-height:1}
-.logo__name{font-weight:900;font-size:19px;letter-spacing:-.055em;text-transform:uppercase}
-.logo__tag{font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:3px;font-weight:600}
+.logo__mark::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(140deg,rgba(250,248,244,.16),transparent 55%);
+}
+.logo:hover .logo__mark{transform:rotate(-6deg) scale(1.06);background:var(--accent)}
+.logo__mark svg{width:23px;height:23px;fill:var(--paper);position:relative;z-index:1}
+.logo__name{
+  font-weight:900;font-size:20px;letter-spacing:.11em;text-transform:uppercase;
+  display:block;padding-right:.11em;
+}
+.logo--lg .logo__mark{width:52px;height:52px;border-radius:16px}
+.logo--lg .logo__mark svg{width:31px;height:31px}
+.logo--lg .logo__name{font-size:27px}
+/* Logo en superficies oscuras */
+.on-ink .logo,.on-ink .logo__name{color:var(--paper)}
+.on-ink .logo__mark{background:var(--paper)}
+.on-ink .logo__mark svg{fill:var(--ink)}
 
 /* ---------- Barra superior ---------- */
 .topbar{background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600}
@@ -177,6 +190,21 @@ ul{margin:0; padding:0; list-style:none}
 .ph::after{
   content:attr(data-label);position:absolute;inset:auto 0 0 0;padding:12px;
   font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;font-weight:600;
+}
+/* Placeholder de marca: fondo oscuro con el monograma al agua.
+   Evita el vacío blanco mientras no haya fotos reales. */
+.ph--brand{
+  background:
+    radial-gradient(120% 90% at 78% 12%, rgba(232,71,31,.28), transparent 58%),
+    linear-gradient(165deg, #1c1b19, #111110 60%);
+}
+.ph--brand::before{border-color:rgba(250,248,244,.14)}
+.ph--brand::after{color:rgba(250,248,244,.45)}
+.ph--brand .ph__mark{
+  position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+}
+.ph--brand .ph__mark svg{
+  width:min(46%,230px);height:auto;fill:none;stroke:rgba(250,248,244,.16);stroke-width:.9;
 }
 .ph--1x1{aspect-ratio:1/1}
 .ph--4x5{aspect-ratio:4/5}
