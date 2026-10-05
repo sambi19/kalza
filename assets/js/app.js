@@ -18,6 +18,7 @@ const mailLink = (subject, body) =>
   `mailto:${STORE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
 const getProduct = id => PRODUCTS.find(p => p.id === id);
+const colorImg = (p, name) => (p.colors.find(c => c.name === name) || p.colors[0]).img || p.images[0];
 
 const discount = p =>
   p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : 0;
@@ -142,6 +143,7 @@ const ICON = {
 
 /* ---------- Componentes reutilizables ---------- */
 function starsHTML(rating, reviews) {
+  if (!rating) return "";
   const full = "★".repeat(Math.round(rating));
   const rest = "☆".repeat(5 - Math.round(rating));
   return `<div class="stars"><span aria-hidden="true">${full}${rest}</span> <b>${rating.toFixed(1)}</b> <span>(${reviews})</span></div>`;
@@ -157,7 +159,7 @@ function productCardHTML(p) {
   <article class="card" data-id="${p.id}">
     <div class="card__media">
       <a href="producto.html?id=${p.id}" aria-label="${p.name}">
-        <div class="ph ph--4x5" data-label="Imagen ${p.name}"></div>
+        <div class="ph ph--4x5 ph--img"><img src="${p.images[0]}" alt="${p.name}" loading="lazy"></div>
       </a>
       <div class="card__flags">${flags.join("")}</div>
       <button class="icon-btn card__fav" data-fav="${p.id}" aria-pressed="${Favs.has(p.id)}" aria-label="Guardar ${p.name} en favoritos">${ICON.heart}</button>
@@ -204,7 +206,7 @@ function cartLineHTML(i) {
   const k = Cart.key(i.id, i.size, i.color);
   return `
   <div class="line" data-key="${k}">
-    <div class="ph ph--1x1" data-label="Foto"></div>
+    <div class="ph ph--1x1 ph--img"><img src="${colorImg(p, i.color)}" alt="" loading="lazy"></div>
     <div>
       <div class="line__name">${p.name}</div>
       <div class="line__meta">Talla ${i.size} · ${i.color} · x${i.qty}</div>
@@ -261,6 +263,7 @@ function initCatalog() {
     q: param("q") || "",
     cats: new Set(param("cat") ? [param("cat")] : []),
     types: new Set(param("tipo") ? [param("tipo")] : []),
+    brands: new Set(param("marca") ? [param("marca")] : []),
     sizes: new Set(),
     max: Infinity,
     onlySale: param("oferta") === "1",
@@ -277,6 +280,7 @@ function initCatalog() {
     }
     if (state.cats.size && !state.cats.has(p.category)) return false;
     if (state.types.size && !state.types.has(p.type)) return false;
+    if (state.brands.size && !state.brands.has(p.brand)) return false;
     if (state.sizes.size && !p.sizes.some(s => state.sizes.has(String(s)))) return false;
     if (p.price > state.max) return false;
     if (state.onlySale && !p.compareAt) return false;
@@ -297,6 +301,7 @@ function initCatalog() {
     if (state.q) chips.push(["q", `"${state.q}"`]);
     state.cats.forEach(c => chips.push(["cat:" + c, CATEGORIES.find(x => x.slug === c)?.name || c]));
     state.types.forEach(t => chips.push(["tipo:" + t, TYPES.find(x => x.slug === t)?.name || t]));
+    state.brands.forEach(b => chips.push(["marca:" + b, b]));
     state.sizes.forEach(s => chips.push(["talla:" + s, "Talla " + s]));
     if (state.onlySale) chips.push(["oferta", "En oferta"]);
     if (state.max !== Infinity) chips.push(["max", "Hasta " + money(state.max)]);
@@ -331,6 +336,17 @@ function initCatalog() {
     typeBox.innerHTML = TYPES.map(t => `
       <label class="check"><input type="checkbox" value="${t.slug}" ${state.types.has(t.slug) ? "checked" : ""}> ${t.name}</label>`).join("");
   }
+  const brandBox = $("[data-filter-brands]");
+  if (brandBox) {
+    const brands = [...new Set(PRODUCTS.map(p => p.brand))].sort((a, b) => a.localeCompare(b));
+    brandBox.innerHTML = brands.map(b => `
+      <label class="check"><input type="checkbox" value="${b}" ${state.brands.has(b) ? "checked" : ""}> ${b} <span class="muted">(${PRODUCTS.filter(p => p.brand === b).length})</span></label>`).join("");
+  }
+  brandBox?.addEventListener("change", e => {
+    const v = e.target.value;
+    e.target.checked ? state.brands.add(v) : state.brands.delete(v);
+    render();
+  });
   const sizeBox = $("[data-filter-sizes]");
   if (sizeBox) {
     const all = [...new Set(PRODUCTS.flatMap(p => p.sizes))].sort((a, b) => a - b);
@@ -377,10 +393,10 @@ function initCatalog() {
     if (!b) return;
     const k = b.dataset.clear;
     if (k === "all") {
-      state.q = ""; state.cats.clear(); state.types.clear(); state.sizes.clear();
+      state.q = ""; state.cats.clear(); state.types.clear(); state.brands.clear(); state.sizes.clear();
       state.onlySale = false; state.max = Infinity;
       if (search) search.value = "";
-      $$('[data-filter-cats] input, [data-filter-types] input').forEach(i => (i.checked = false));
+      $$('[data-filter-cats] input, [data-filter-types] input, [data-filter-brands] input').forEach(i => (i.checked = false));
       $$("[data-size]").forEach(i => i.setAttribute("aria-pressed", "false"));
       const saleBox = $("[data-filter-sale]"); if (saleBox) saleBox.checked = false;
       const priceBox = $("[data-filter-price]"); if (priceBox) priceBox.value = "";
@@ -391,6 +407,7 @@ function initCatalog() {
       const [kind, val] = k.split(":");
       if (kind === "cat")   { state.cats.delete(val);  $$(`[data-filter-cats] input[value="${val}"]`).forEach(i => i.checked = false); }
       if (kind === "tipo")  { state.types.delete(val); $$(`[data-filter-types] input[value="${val}"]`).forEach(i => i.checked = false); }
+      if (kind === "marca") { state.brands.delete(val); $$(`[data-filter-brands] input[value="${val}"]`).forEach(i => i.checked = false); }
       if (kind === "talla") { state.sizes.delete(val); $$(`[data-size="${val}"]`).forEach(i => i.setAttribute("aria-pressed", "false")); }
     }
     render();
@@ -423,11 +440,9 @@ function initPDP() {
 
   root.innerHTML = `
     <div class="gallery">
-      <div class="ph ph--16x9" data-label="Foto principal — ${p.name}"></div>
-      <div class="ph ph--1x1" data-label="Detalle lateral"></div>
-      <div class="ph ph--1x1" data-label="Detalle suela"></div>
-      <div class="ph ph--1x1" data-label="Vista superior"></div>
-      <div class="ph ph--1x1" data-label="En uso"></div>
+      <div class="ph ph--1x1 ph--img"><img data-main-img src="${p.images[0]}" alt="${p.name}"></div>
+      ${p.images.length > 1 ? `<div class="thumbs">${p.images.map((src, i) => `
+        <button class="thumb ph--img" data-thumb="${src}" aria-pressed="${i === 0}" aria-label="Ver foto ${i + 1}"><img src="${src}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
     </div>
 
     <div class="pdp__info">
@@ -516,6 +531,11 @@ function initPDP() {
       </div>
     </div>`;
 
+  const showImg = src => {
+    $("[data-main-img]", root).src = src;
+    $$("[data-thumb]", root).forEach(t => t.setAttribute("aria-pressed", String(t.dataset.thumb === src)));
+  };
+
   const waBtn = $("[data-pdp-wa]", root);
   const updateWa = () => {
     waBtn.href = waLink(
@@ -530,8 +550,11 @@ function initPDP() {
       color = c.dataset.color;
       $$("[data-color]", root).forEach(b => b.setAttribute("aria-pressed", String(b === c)));
       $("[data-color-name]", root).textContent = color;
+      showImg(colorImg(p, color));
       updateWa();
     }
+    const t = e.target.closest("[data-thumb]");
+    if (t) showImg(t.dataset.thumb);
     const s = e.target.closest("[data-size]");
     if (s) {
       size = s.dataset.size;
@@ -575,7 +598,7 @@ function initCartPage() {
       const k = Cart.key(i.id, i.size, i.color);
       return `
       <div class="cart-line" data-key="${k}">
-        <div class="ph ph--1x1" data-label="Foto"></div>
+        <div class="ph ph--1x1 ph--img"><img src="${colorImg(p, i.color)}" alt="" loading="lazy"></div>
         <div style="display:flex;flex-direction:column;gap:8px">
           <div style="display:flex;justify-content:space-between;gap:16px">
             <div>
