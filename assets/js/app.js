@@ -244,24 +244,49 @@ function openDrawer(sel, open) {
 }
 
 /* ---------- Página: inicio ---------- */
-function initSlider() {
-  const track = $("[data-slider-track]");
-  if (!track) return;
-  const slides = [...track.children];
-  const dots = $("[data-slider-dots]");
-  dots.innerHTML = slides.map((_, i) => `<button aria-label="Ver zapato ${i + 1}"></button>`).join("");
-  const go = i => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
-  const current = () => Math.round(track.scrollLeft / track.clientWidth);
-  const mark = () => [...dots.children].forEach((d, i) => d.setAttribute("aria-current", String(i === current())));
-  dots.addEventListener("click", e => { const i = [...dots.children].indexOf(e.target); if (i >= 0) go(i); });
-  track.addEventListener("scroll", mark, { passive: true });
-  mark();
-  let timer = setInterval(() => go((current() + 1) % slides.length), 4500);
-  ["pointerdown", "touchstart"].forEach(ev => track.addEventListener(ev, () => clearInterval(timer), { passive: true }));
+function initRails() {
+  $$("[data-rail-products]").forEach(track => {
+    const kind = track.dataset.railProducts;
+    const list = PRODUCTS.filter(p => kind === "new" ? p.badge === "new" : p.type === kind);
+    track.innerHTML = list.map(productCardHTML).join("");
+  });
+  $$("[data-rail]").forEach(rail => {
+    const track = $("[data-rail-track]", rail);
+    const bar = $("[data-rail-bar]", rail);
+    const prev = $("[data-rail-prev]", rail);
+    const next = $("[data-rail-next]", rail);
+    const step = () => (track.firstElementChild?.getBoundingClientRect().width || 300) + 12;
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const ratio = track.clientWidth / track.scrollWidth;
+      const pos = max > 0 ? track.scrollLeft / max : 0;
+      if (bar) {
+        bar.style.width = (ratio * 100) + "%";
+        bar.style.transform = `translateX(${pos * (1 / ratio - 1) * 100}%)`;
+      }
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+    };
+    prev?.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+    next?.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+}
+
+function initBrands() {
+  const box = $("[data-brands]");
+  if (!box) return;
+  const brands = [...new Set(PRODUCTS.map(p => p.brand))].filter(b => b !== "Kalza").sort((a, b) => a.localeCompare(b));
+  box.innerHTML = brands.map(b => `<a href="catalogo.html?marca=${encodeURIComponent(b)}">${b}</a>`).join("");
+  const min = $("[data-min-price]");
+  if (min) min.textContent = money(Math.min(...PRODUCTS.map(p => p.price)));
 }
 
 function initHome() {
-  initSlider();
+  initRails();
+  initBrands();
   const featured = $("[data-featured]");
   if (featured) {
     const list = PRODUCTS.filter(p => p.badge === "new" || p.rating >= 4.7).slice(0, 8);

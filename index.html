@@ -10,7 +10,8 @@
 <meta property="og:description" content="Zapatos originales con envío a toda Colombia y atención por WhatsApp.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6.5' fill='%23111110'/><g fill='%23faf8f4'><path d='M4.5 3.4h4.1v17.2H4.5z'/><path d='M20 3.4h-5.4L8.6 10.5v5z'/><path d='m11.6 11.3 8.8 9.3h-5.4l-6.4-6.8z'/></g></svg>">
-<link rel="stylesheet" href="assets/css/styles.css?v=7">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261005">
+<link rel="stylesheet" href="assets/css/tienda.css?v=20261005">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -56,167 +57,122 @@
 
 <main id="main">
 
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="hero__grid">
-      <div class="hero__copy">
-        <span class="eyebrow">Nueva temporada 2026</span>
-        <h1 class="h-xl">Cada paso<span class="serif">cuenta una historia</span></h1>
-        <p class="lead">Calzado original para correr, entrenar, trabajar y salir. Elegimos cada modelo por comodidad real, no por moda pasajera.</p>
-        <div class="hero__cta">
-          <a class="btn btn--solid btn--lg" href="catalogo.html">Ver catálogo</a>
-          <a class="btn btn--ghost btn--lg" href="catalogo.html?oferta=1">Ofertas de la semana</a>
-        </div>
-        <div class="hero__stats">
-          <div><b>+4.500</b><span>Clientes felices</span></div>
-          <div><b>4.7/5</b><span>Calificación media</span></div>
-          <div><b>48 h</b><span>Despacho promedio</span></div>
-        </div>
+  <!-- ===== Hero: titular + carrusel deslizable ===== -->
+  <section class="hx">
+    <div class="wrap hx__head">
+      <h1 class="hx__title">Tenis para todos los días, desde <span data-min-price>$119.900</span></h1>
+      <p class="hx__sub">Nike, Adidas, New Balance, Converse y más. Envío a toda Colombia y pago contra entrega.</p>
+      <div class="hx__cta">
+        <a class="btn btn--solid" href="catalogo.html">Ver catálogo</a>
+        <a class="btn btn--ghost" data-wa="Hola Kalza, quiero asesoría para elegir mis tenis.">Pedir asesoría</a>
       </div>
-      <div class="hero__media">
-        <div class="slider" data-slider>
-          <div class="slider__track" data-slider-track>
-            <a class="slider__slide" href="producto.html?id=kz-007"><img src="assets/img/productos/z07-1.jpg" alt="Nike Air Max Plus TN"><span class="slider__name">Nike Air Max Plus TN</span></a>
-            <a class="slider__slide" href="producto.html?id=kz-033"><img src="assets/img/productos/z38-1.jpg" alt="New Balance 9060"><span class="slider__name">New Balance 9060</span></a>
-            <a class="slider__slide" href="producto.html?id=kz-022"><img src="assets/img/productos/z27-1.jpg" alt="LV Trainer"><span class="slider__name">LV Trainer</span></a>
-            <a class="slider__slide" href="producto.html?id=kz-019"><img src="assets/img/productos/z24-1.jpg" alt="Nike V2K Run"><span class="slider__name">Nike V2K Run</span></a>
-            <a class="slider__slide" href="producto.html?id=kz-021"><img src="assets/img/productos/z26-2.jpg" alt="Nike Air Force 1"><span class="slider__name">Nike Air Force 1</span></a>
-            <a class="slider__slide" href="producto.html?id=kz-034"><img src="assets/img/productos/z39-2.jpg" alt="On Cloudsurfer"><span class="slider__name">On Cloudsurfer</span></a>
-          </div>
-          <div class="slider__dots" data-slider-dots></div>
+    </div>
+    <div class="rail rail--hero" data-rail>
+      <div class="rail__track" data-rail-track>
+        <a class="hslide" href="producto.html?id=kz-007"><img src="assets/img/productos/z07-1.jpg" alt="Nike Air Max Plus TN blanco y verde"></a>
+        <a class="hslide" href="producto.html?id=kz-033"><img src="assets/img/productos/z38-1.jpg" alt="New Balance 9060 café y rosa"></a>
+        <a class="hslide" href="producto.html?id=kz-022"><img src="assets/img/productos/z27-1.jpg" alt="LV Trainer rojo" loading="lazy"></a>
+        <a class="hslide" href="producto.html?id=kz-019"><img src="assets/img/productos/z24-1.jpg" alt="Nike V2K Run rosado" loading="lazy"></a>
+        <a class="hslide" href="producto.html?id=kz-021"><img src="assets/img/productos/z26-2.jpg" alt="Nike Air Force 1 blanco y negro" loading="lazy"></a>
+        <a class="hslide" href="producto.html?id=kz-034"><img src="assets/img/productos/z39-2.jpg" alt="On Cloudsurfer blanco" loading="lazy"></a>
+      </div>
+      <div class="wrap rail__ui">
+        <div class="rail__progress"><span data-rail-bar></span></div>
+        <div class="rail__arrows">
+          <button class="rail__btn" data-rail-prev aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="rail__btn" data-rail-next aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <span class="hero__tagpill">Stock disponible hoy</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== Marquee ===== -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>100% Original</span><span>Envío a toda Colombia</span><span>Garantía 6 meses</span><span>Pago contra entrega</span>
-      <span>100% Original</span><span>Envío a toda Colombia</span><span>Garantía 6 meses</span><span>Pago contra entrega</span>
+  <!-- ===== Marcas ===== -->
+  <section class="brands">
+    <div class="wrap">
+      <div class="brands__row" data-brands></div>
     </div>
-  </div>
+  </section>
 
   <!-- ===== Categorías ===== -->
-  <section class="section reveal">
+  <section class="section">
     <div class="wrap">
-      <div class="section__head">
-        <div>
-          <span class="eyebrow">Comprar por categoría</span>
-          <h2 class="h-lg">Elegí tu estilo</h2>
-        </div>
-        <a class="btn btn--ghost" href="catalogo.html">Ver todo</a>
-      </div>
-      <div class="grid grid--cats">
-        <a class="cat" href="catalogo.html?cat=hombre"><div class="ph ph--4x5 ph--img"><img src="assets/img/productos/z34-1.jpg" alt="" loading="lazy"></div><span class="cat__label">Hombre</span></a>
-        <a class="cat" href="catalogo.html?cat=mujer"><div class="ph ph--4x5 ph--img"><img src="assets/img/productos/z04-1.jpg" alt="" loading="lazy"></div><span class="cat__label">Mujer</span></a>
-        <a class="cat" href="catalogo.html?cat=ninos"><div class="ph ph--4x5 ph--img"><img src="assets/img/productos/z21-2.jpg" alt="" loading="lazy"></div><span class="cat__label">Niños</span></a>
-        <a class="cat" href="catalogo.html?tipo=running"><div class="ph ph--4x5 ph--img"><img src="assets/img/productos/z11-3.jpg" alt="" loading="lazy"></div><span class="cat__label">Running</span></a>
+      <h2 class="h-sec">Comprá por categoría</h2>
+      <div class="cats">
+        <a class="ctile ctile--big" href="catalogo.html?cat=mujer">
+          <img src="assets/img/productos/z04-1.jpg" alt="" loading="lazy">
+          <span class="ctile__txt"><b>Mujer</b><span>Ver modelos</span></span>
+        </a>
+        <a class="ctile" href="catalogo.html?cat=hombre">
+          <img src="assets/img/productos/z34-1.jpg" alt="" loading="lazy">
+          <span class="ctile__txt"><b>Hombre</b><span>Ver modelos</span></span>
+        </a>
+        <a class="ctile" href="catalogo.html?cat=ninos">
+          <img src="assets/img/productos/z21-2.jpg" alt="" loading="lazy">
+          <span class="ctile__txt"><b>Niños</b><span>Ver modelos</span></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== Destacados ===== -->
-  <section class="section section--alt reveal">
-    <div class="wrap">
-      <div class="section__head">
-        <div>
-          <span class="eyebrow">Lo más pedido</span>
-          <h2 class="h-lg">Destacados</h2>
-          <p>Los modelos que más se repiten en los pedidos de este mes, con stock disponible en la mayoría de tallas.</p>
+  <!-- ===== Lo nuevo ===== -->
+  <section class="section section--tint">
+    <div class="wrap shead">
+      <h2 class="h-sec">Lo nuevo</h2>
+      <a class="link" href="catalogo.html">Ver todo</a>
+    </div>
+    <div class="rail" data-rail>
+      <div class="rail__track rail__track--cards" data-rail-track data-rail-products="new"></div>
+      <div class="wrap rail__ui">
+        <div class="rail__progress"><span data-rail-bar></span></div>
+        <div class="rail__arrows">
+          <button class="rail__btn" data-rail-prev aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="rail__btn" data-rail-next aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <a class="btn btn--ghost" href="catalogo.html">Ver catálogo completo</a>
       </div>
-      <div class="grid grid--products" data-featured></div>
     </div>
   </section>
 
-  <!-- ===== Beneficios ===== -->
-  <section class="section reveal">
+  <!-- ===== Destacado editorial ===== -->
+  <section class="section">
     <div class="wrap">
-      <ul class="usps">
-        <li class="usp">
-          <svg viewBox="0 0 24 24"><path d="M3 16V6h11v10M14 9h4l3 3v4h-2"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>
-          <h3>Envío a toda Colombia</h3>
-          <p>Despacho en 24 horas hábiles y entrega en 2 a 5 días. Gratis desde <span data-free-from></span>.</p>
-        </li>
-        <li class="usp">
-          <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 16"/><path d="M4 20v-4h4"/></svg>
-          <h3>Cambios en 30 días</h3>
-          <p>Si no te queda, coordinamos el cambio de talla dentro de los 30 días de recibido.</p>
-        </li>
-        <li class="usp">
-          <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3>Producto original</h3>
-          <p>Todos los pares llegan con caja, etiquetas y garantía de 6 meses por defectos de fábrica.</p>
-        </li>
-        <li class="usp">
-          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
-          <h3>Pagá como prefieras</h3>
-          <p>Contra entrega, transferencia, Nequi, Daviplata o tarjeta hasta en 4 cuotas.</p>
-        </li>
+      <a class="feature" href="producto.html?id=kz-033">
+        <img src="assets/img/productos/z38-2.jpg" alt="New Balance 9060 gris claro" loading="lazy">
+        <div class="feature__txt">
+          <h2>New Balance 9060</h2>
+          <p>El chunky más pedido, en seis colores. Tallas 36 a 43.</p>
+          <span class="btn btn--light">Ver colores</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Running ===== -->
+  <section class="section section--flush">
+    <div class="wrap shead">
+      <h2 class="h-sec">Para correr y entrenar</h2>
+      <a class="link" href="catalogo.html?tipo=running">Ver todo</a>
+    </div>
+    <div class="rail" data-rail>
+      <div class="rail__track rail__track--cards" data-rail-track data-rail-products="running"></div>
+      <div class="wrap rail__ui">
+        <div class="rail__progress"><span data-rail-bar></span></div>
+        <div class="rail__arrows">
+          <button class="rail__btn" data-rail-prev aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="rail__btn" data-rail-next aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Servicio ===== -->
+  <section class="section">
+    <div class="wrap">
+      <ul class="svc">
+        <li><svg viewBox="0 0 24 24"><path d="M3 16V6h11v10M14 9h4l3 3v4h-2"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg><div><b>Envío a toda Colombia</b><span>Entrega en 2 a 5 días hábiles</span></div></li>
+        <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><div><b>Pago contra entrega</b><span>También Nequi, Daviplata y transferencia</span></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 16"/><path d="M4 20v-4h4"/></svg><div><b>Cambio de talla</b><span>Dentro de los 30 días</span></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/></svg><div><b>Asesoría por WhatsApp</b><span>Te ayudamos a elegir la talla</span></div></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- ===== Banner ofertas ===== -->
-  <section class="section section--alt reveal">
-    <div class="wrap">
-      <div class="section__head">
-        <div>
-          <span class="eyebrow">Precio rebajado</span>
-          <h2 class="h-lg">En oferta ahora</h2>
-        </div>
-        <a class="btn btn--ghost" href="catalogo.html?oferta=1">Ver todas las ofertas</a>
-      </div>
-      <div class="grid grid--products" data-sale></div>
-    </div>
-  </section>
-
-  <!-- ===== Testimonios ===== -->
-  <section class="section reveal">
-    <div class="wrap">
-      <div class="section__head">
-        <div>
-          <span class="eyebrow">Reseñas verificadas</span>
-          <h2 class="h-lg">Qué dicen nuestros clientes</h2>
-        </div>
-      </div>
-      <div class="quotes">
-        <article class="quote">
-          <div class="stars"><span>★★★★★</span></div>
-          <p>“Pedí un martes y me llegó el jueves a Medellín. El par vino con caja original y me quedó perfecto de talla.”</p>
-          <footer>Laura M. · Medellín</footer>
-        </article>
-        <article class="quote">
-          <div class="stars"><span>★★★★★</span></div>
-          <p>“Me equivoqué de talla y el cambio fue por WhatsApp en dos mensajes. Cero complicaciones.”</p>
-          <footer>Andrés P. · Bogotá</footer>
-        </article>
-        <article class="quote">
-          <div class="stars"><span>★★★★☆</span></div>
-          <p>“Los uso todo el día en el trabajo y no me duelen los pies. Volvería a comprar sin dudar.”</p>
-          <footer>Diana R. · Cali</footer>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Newsletter ===== -->
-  <section class="section reveal">
-    <div class="wrap">
-      <div class="newsletter">
-        <div>
-          <span class="eyebrow" style="color:rgba(255,255,255,.6)">Comunidad Kalza</span>
-          <h2 class="h-lg" style="margin-top:8px">10% off en tu primera compra</h2>
-          <p style="margin-top:10px;opacity:.8">Dejanos tu correo y te avisamos de lanzamientos, restock de tallas y descuentos antes que a nadie.</p>
-        </div>
-        <form data-newsletter>
-          <input class="input" type="email" name="correo" placeholder="tu@correo.com" required aria-label="Tu correo">
-          <button class="btn btn--light" type="submit">Suscribirme</button>
-        </form>
-      </div>
     </div>
   </section>
 
@@ -278,7 +234,7 @@
     </div>
     <div class="footer__bottom">
       <span>© <span data-year></span> Kalza. Todos los derechos reservados.</span>
-      <span>Sitio demostrativo · Precios en pesos colombianos (COP)</span>
+      <span>Precios en pesos colombianos (COP)</span>
     </div>
   </div>
 </footer>
@@ -333,7 +289,7 @@
   <b>WhatsApp</b>
 </a>
 
-<script src="assets/js/data.js?v=7"></script>
-<script src="assets/js/app.js?v=7"></script>
+<script src="assets/js/data.js?v=20261005"></script>
+<script src="assets/js/app.js?v=20261005"></script>
 </body>
 </html>
