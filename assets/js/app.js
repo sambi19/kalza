@@ -498,7 +498,7 @@ function initPDP() {
         <span class="now">${money(p.price)}</span>
         ${p.compareAt ? `<del>${money(p.compareAt)}</del><span class="flag flag--sale">-${discount(p)}%</span>` : ""}
       </div>
-      <p class="muted" style="font-size:13px">Hasta 4 cuotas sin interés · Envío gratis desde ${money(STORE.freeShippingFrom)}</p>
+      <p class="muted" style="font-size:13px">Envío gratis desde ${money(STORE.freeShippingFrom)}</p>
 
       <div>
         <div class="field-label"><span>Color</span><span class="muted" data-color-name>${color}</span></div>
