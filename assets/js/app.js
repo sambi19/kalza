@@ -244,7 +244,24 @@ function openDrawer(sel, open) {
 }
 
 /* ---------- Página: inicio ---------- */
+function initSlider() {
+  const track = $("[data-slider-track]");
+  if (!track) return;
+  const slides = [...track.children];
+  const dots = $("[data-slider-dots]");
+  dots.innerHTML = slides.map((_, i) => `<button aria-label="Ver zapato ${i + 1}"></button>`).join("");
+  const go = i => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" });
+  const current = () => Math.round(track.scrollLeft / track.clientWidth);
+  const mark = () => [...dots.children].forEach((d, i) => d.setAttribute("aria-current", String(i === current())));
+  dots.addEventListener("click", e => { const i = [...dots.children].indexOf(e.target); if (i >= 0) go(i); });
+  track.addEventListener("scroll", mark, { passive: true });
+  mark();
+  let timer = setInterval(() => go((current() + 1) % slides.length), 4500);
+  ["pointerdown", "touchstart"].forEach(ev => track.addEventListener(ev, () => clearInterval(timer), { passive: true }));
+}
+
 function initHome() {
+  initSlider();
   const featured = $("[data-featured]");
   if (featured) {
     const list = PRODUCTS.filter(p => p.badge === "new" || p.rating >= 4.7).slice(0, 8);
